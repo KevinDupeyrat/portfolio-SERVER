@@ -7,11 +7,13 @@ import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.util.List;
+
 @Builder
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Document(collection = "article")
+@Document(collection = "user")
 public class User {
 
     @Id
@@ -23,4 +25,6 @@ public class User {
     private String companyName;
     private String email;
     private String password;
+    private boolean active;
+    private List<Roles> roles;
 }
