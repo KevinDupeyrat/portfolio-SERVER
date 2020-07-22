@@ -1,1 +1,22 @@
+# ===================================================================
+# Spring Boot configuration for the "HML AND PROD" profile.
+#
+# This configuration overrides the application.yml file
+# ===================================================================
 
+spring:
+  application:
+    name: portfolio-server
+  profiles:
+    active: local
+  data:
+    mongodb:
+      uri: mongodb://localhost/portfolioDB
+
+server:
+  port: 8080
+  tomcat:
+    accesslog:
+      enabled: true
+      directory: /Users/dupeyrat/Documents/Projects/Logs/Portfolio
+      prefix: access_log
