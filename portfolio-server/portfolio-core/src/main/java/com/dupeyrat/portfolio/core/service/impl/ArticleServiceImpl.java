@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service;
 @Slf4j
 public class ArticleServiceImpl implements IArticleService {
 
-    // private final IArticleProvider articleProvider;
+    private final IArticleProvider articleProvider;
 
     @Override
     public Article updateArticle(Article article) {

@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service;
 @Slf4j
 public class ExperienceServiceImpl implements IExperienceService {
 
-    // private final IExperienceProvider experienceProvider;
+    private final IExperienceProvider experienceProvider;
 
     @Override
     public Experience updateExperience(Experience experience) {

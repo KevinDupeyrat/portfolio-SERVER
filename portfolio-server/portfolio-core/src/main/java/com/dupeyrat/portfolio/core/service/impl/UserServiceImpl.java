@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service;
 @Slf4j
 public class UserServiceImpl implements IUserService {
 
-    // private final IUserProvider userProvider;
+    private final IUserProvider userProvider;
 
     @Override
     public User updateUser(User user) {
