@@ -1,4 +1,4 @@
-package test.java.com.dupeyrat.portfolio.web;
+package com.dupeyrat.portfolio.web;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
