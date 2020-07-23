@@ -16,3 +16,5 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Build Docker Image
         run: docker build -t portfolio-server ./portfolio-server/
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
