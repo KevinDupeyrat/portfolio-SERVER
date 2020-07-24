@@ -11,7 +11,7 @@ spring:
     active: local
   data:
     mongodb:
-      uri: mongodb://localhost/portfolioDB
+      host: mongodb-dockered-image-name
 
 server:
   port: 8080
