@@ -22,4 +22,5 @@ jobs:
           registry: docker.pkg.github.com
           repository: portfolio-server
           directory: /portfolio-server
+          path: /portfolio-server
           tags: latest
