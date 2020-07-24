@@ -20,6 +20,6 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
           registry: docker.pkg.github.com
-          repository: portfolio-server
-          path: /portfolio-server/Dockerfile
+          repository: portfolio-SERVER
+          dockerfile: /portfolio-server/Dockerfile
           tags: latest
