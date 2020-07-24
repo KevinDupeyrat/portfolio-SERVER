@@ -22,4 +22,5 @@ jobs:
           registry: docker.pkg.github.com
           repository: kevindupeyrat/portfolio-server
           dockerfile: portfolio-server/Dockerfile
+          path: portfolio-server
           tag_with_ref: true
