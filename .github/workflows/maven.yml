@@ -21,6 +21,5 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
           registry: docker.pkg.github.com
           repository: portfolio-server
-          directory: /portfolio-server
-          path: /portfolio-server
-          tags: latest
+          path: /portfolio-server/Dockerfile
+          tags: ${{ outputs.build.tags }
