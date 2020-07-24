@@ -15,8 +15,12 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Build Docker Image
-        run: docker build -t docker.pkg.github.com/portfolio-server/porfolio-server:0.1-snapshot ./portfolio-server/
-      - name: Push Image in Repo GITHUB
-        run: docker push docker.pkg.github.com/portfolio-server/porfolio-server:0.1-snapshot
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: docker build -t docker.pkg.github.com/portfolio-server/porfolio-server:0.1-snapshot ./portfolio-server/ 
+      - name: Push to GitHub Packages
+        uses: docker/build-push-action@v1
+        with:
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+          registry: docker.pkg.github.com
+          repository: docker.pkg.github.com/portfolio-server/porfolio-server:0.1-snapshot
+          tag_with_ref: true
