@@ -22,5 +22,5 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
           registry: docker.pkg.github.com
-          repository: docker.pkg.github.com/portfolio-server/porfolio-server:0.1-snapshot
+          repository: portfolio-server/porfolio-server
           tag_with_ref: true
