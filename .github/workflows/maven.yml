@@ -20,7 +20,7 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
           registry: docker.pkg.github.com
-          repository: kevindupeyrat/portfolio-server/portfolio-server-{git-tag}
+          repository: kevindupeyrat/portfolio-server/portfolio-server-test-docker
           dockerfile: portfolio-server/Dockerfile
           path: portfolio-server
           tag_with_ref: true
