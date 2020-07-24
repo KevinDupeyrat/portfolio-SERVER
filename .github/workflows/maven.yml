@@ -11,7 +11,7 @@ jobs:
         with:
           java-version: 11
       - name: Build JAR package
-        run: mvn clean install --file portfolio-server/pom.xml
+        run: mvn clean install -B --file portfolio-server/pom.xml
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Build and Push Docker Image
@@ -20,7 +20,7 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
           registry: docker.pkg.github.com
-          repository: kevindupeyrat/portfolio-server
+          repository: kevindupeyrat/portfolio-server/portfolio-server-{git-tag}
           dockerfile: portfolio-server/Dockerfile
           path: portfolio-server
           tag_with_ref: true
