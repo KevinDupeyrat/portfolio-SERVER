@@ -10,17 +10,16 @@ jobs:
       - uses: actions/setup-java@v1
         with:
           java-version: 11
-      - name: Publish package
+      - name: Build JAR package
         run: mvn -B install --file portfolio-server/pom.xml
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - name: Build Docker Image
-        run: docker build -t docker.pkg.github.com/portfolio-server/porfolio-server:0.1-snapshot ./portfolio-server/ 
-      - name: Push to GitHub Packages
+      - name: Build and Push to GitHub Packages
         uses: docker/build-push-action@v1
         with:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
           registry: docker.pkg.github.com
-          repository: portfolio-server/porfolio-server
-          tag_with_ref: true
+          repository: portfolio-server
+          path: ./../../portfolio-server
+          tags: latest
