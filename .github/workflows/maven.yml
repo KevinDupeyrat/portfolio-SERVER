@@ -22,4 +22,4 @@ jobs:
           registry: docker.pkg.github.com
           repository: portfolio-server
           path: /portfolio-server/Dockerfile
-          tags: ${{ outputs.build.tags }}
+          tags: latest
