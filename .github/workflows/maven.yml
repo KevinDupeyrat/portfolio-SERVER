@@ -11,10 +11,12 @@ jobs:
         with:
           java-version: 11
       - name: Publish package
-        run: mvn -B deploy --file portfolio-server/pom.xml
+        run: mvn -B install --file portfolio-server/pom.xml
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Build Docker Image
-        run: docker build -t portfolio-server ./portfolio-server/
+        run: docker build -t docker.pkg.github.com/portfolio-SERVER/porfolio-server:0.1-SNAPSHOT ./portfolio-server/
+      - name: Push Image in Repo GITHUB
+        run: docker push docker.pkg.github.com/portfolio-SERVER/porfolio-server:0.1-SNAPSHOT
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
