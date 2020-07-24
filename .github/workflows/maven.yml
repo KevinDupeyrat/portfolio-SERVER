@@ -11,7 +11,7 @@ jobs:
         with:
           java-version: 11
       - name: Build JAR package
-        run: mvn -B install --file portfolio-server/pom.xml
+        run: mvn clean install --file portfolio-server/pom.xml
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Build and Push Docker Image
