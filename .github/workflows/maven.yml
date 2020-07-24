@@ -14,12 +14,12 @@ jobs:
         run: mvn -B install --file portfolio-server/pom.xml
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - name: Build and Push to GitHub Packages
+      - name: Build and Push Docker Image
         uses: docker/build-push-action@v1
         with:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
           registry: docker.pkg.github.com
           repository: portfolio-server
-          dockerfile: /portfolio-server/Dockerfile
+          directory: /portfolio-server
           tags: latest
