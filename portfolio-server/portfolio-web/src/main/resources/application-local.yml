@@ -11,12 +11,23 @@ spring:
     active: local
   data:
     mongodb:
-      uri: mongodb://localhost/portfolioDB
+      host: localhost
+      port: 27017
+      database: portfolioDB
+      username:
+      password:
 
 server:
-  port: 8082
+  port: 8443
   tomcat:
     accesslog:
       enabled: true
       directory: /Users/dupeyrat/Documents/Projects/Logs/Portfolio
       prefix: access_log
+  ssl:
+    enable: true
+    key-store-type: PKCS12
+    key-store: classpath:keystore/keystore-local.p12
+    key-store-password: secret
+    key-alias: tomcat
+

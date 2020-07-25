@@ -1,5 +1,5 @@
 # ===================================================================
-# Spring Boot configuration for the "HML AND PROD" profile.
+# Spring Boot configuration for the "PROD" profile.
 #
 # This configuration overrides the application.yml file
 # ===================================================================
@@ -7,16 +7,25 @@
 spring:
   application:
     name: portfolio-server
-  profiles:
-    active: local
   data:
     mongodb:
-      host: mongodb-dockered-image-name
+      mongodb:
+        host: ${MONGO_HOST}
+        port: ${MONGO_PORT}
+        database: portfolioDB
+        username: ${MONGO_USERNAME}
+        password: ${MONGO_PASSWORD}
 
 server:
   port: 8080
   tomcat:
     accesslog:
       enabled: true
-      directory: /Users/dupeyrat/Documents/Projects/Logs/Portfolio
+      directory: ${ACCESS_LOG_DIRECTORY}
       prefix: access_log
+  ssl:
+    enable: true
+    key-store-type: PKCS12
+    key-store: classpath:keystore/baeldung-prod.p12
+    key-store-password: ${KEY_STORE_PASSWORD}
+    key-alias: ${KEY_STORE_ALIAS}
