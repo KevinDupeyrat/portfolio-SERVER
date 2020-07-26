@@ -30,4 +30,6 @@ server:
     key-store: classpath:keystore/keystore-local.p12
     key-store-password: secret
     key-alias: tomcat
+  servlet:
+    context-path: /api/v1/
 
