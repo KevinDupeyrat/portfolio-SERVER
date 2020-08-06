@@ -17,12 +17,15 @@ spring:
       username:
       password:
 
+# logging:
+#   file: /Users/dupeyrat/Documents/Projects/logs/portfolio/java_app_log_file.log
+
 server:
   port: 8443
   tomcat:
     accesslog:
       enabled: true
-      directory: /Users/dupeyrat/Documents/Projects/Logs/Portfolio
+      directory: /Users/dupeyrat/Documents/Projects/logs/portfolio/accessLog
       prefix: access_log
   ssl:
     enable: true
@@ -32,4 +35,11 @@ server:
     key-alias: tomcat
   servlet:
     context-path: /api/v1/
+
+app:
+  mail:
+    login: test.porfolio.dupeyrat@gmail.com
+    password: Test.1234
+    smtp: smtp.gmail.com
+    port: 587
 

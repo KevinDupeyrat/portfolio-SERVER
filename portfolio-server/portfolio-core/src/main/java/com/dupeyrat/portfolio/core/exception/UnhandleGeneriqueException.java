@@ -1,5 +1,6 @@
 package com.dupeyrat.portfolio.core.exception;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
@@ -12,7 +13,8 @@ import java.util.Arrays;
 
 @ControllerAdvice
 @RestController
-public class UnhandleGeneriqueException <T extends Throwable> extends ResponseEntityExceptionHandler {
+@Slf4j
+public class UnhandleGeneriqueException<T extends Throwable> extends ResponseEntityExceptionHandler {
 
     @ExceptionHandler(GenericException.class)
     public final ResponseEntity<ErrorMessage> handleGenericException(GenericException ex, WebRequest request) {
@@ -22,7 +24,7 @@ public class UnhandleGeneriqueException <T extends Throwable> extends ResponseEn
                 .message(ex.getExceptionMessage().getMessage())
                 .messageDetail(Arrays.toString(ex.getStackTrace()))
                 .build();
-
+        ex.printStackTrace();
         return new ResponseEntity<>(errorMessage, HttpStatus.INTERNAL_SERVER_ERROR);
     }
 
@@ -34,7 +36,7 @@ public class UnhandleGeneriqueException <T extends Throwable> extends ResponseEn
                 .message(ex.getMessage())
                 .messageDetail(Arrays.toString(ex.getStackTrace()))
                 .build();
-
+        ex.printStackTrace();
         return new ResponseEntity<>(errorMessage, HttpStatus.INTERNAL_SERVER_ERROR);
     }
 }

@@ -16,8 +16,11 @@ spring:
         username: ${MONGO_USERNAME}
         password: ${MONGO_PASSWORD}
 
+# logging:
+#  file: ${LOG_PATH}/java_app_log_file.log
+
 server:
-  port: 8080
+  port: 8443
   tomcat:
     accesslog:
       enabled: true
@@ -29,3 +32,12 @@ server:
     key-store: classpath:keystore/baeldung-prod.p12
     key-store-password: ${KEY_STORE_PASSWORD}
     key-alias: ${KEY_STORE_ALIAS}
+  servlet:
+    context-path: /api/v1/
+
+app:
+  mail:
+    login: ${EMAIL_LOGIN}
+    password: ${EMAIL_PASSWORD}
+    smtp: smtp.gmail.com
+    port: 587
