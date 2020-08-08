@@ -27,6 +27,6 @@ public class EmailResource {
     public ResponseEntity<String> postEmail(@RequestBody String payload) {
         JsonObject jsonObject = gson.fromJson(payload, JsonObject.class);
         emailService.sendEmail(jsonObject);
-        return ResponseEntity.ok().body("Envoie de mail réussi !");
+        return ResponseEntity.ok().build();
     }
 }

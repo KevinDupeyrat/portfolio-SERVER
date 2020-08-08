@@ -7,6 +7,8 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
+
 @Component
 @RequiredArgsConstructor
 @Slf4j
@@ -16,16 +18,21 @@ public class ExperienceProcessImpl implements IExperienceProcess {
 
     @Override
     public Experience updateExperience(Experience experience) {
-        return null;
+        return experienceService.updateExperience(experience);
     }
 
     @Override
-    public Experience getExperience(String id) {
-        return null;
+    public Experience getExperience(String id) throws Throwable {
+        return experienceService.getExperience(id);
     }
 
     @Override
-    public boolean deleteExperience(String id) {
-        return false;
+    public List<Experience> getAll() {
+        return experienceService.getAll();
+    }
+
+    @Override
+    public void deleteExperience(String id) {
+        experienceService.deleteExperience(id);
     }
 }
