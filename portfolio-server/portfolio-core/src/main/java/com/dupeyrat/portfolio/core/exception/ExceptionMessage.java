@@ -7,7 +7,11 @@ import lombok.Setter;
 @AllArgsConstructor
 public enum ExceptionMessage {
 
-    INIT_VALUE("Exemple de code d'erreur : 001", "Exemple de message d'erreur.");
+    INIT_VALUE("Exemple de code d'erreur : 001", "Exemple de message d'erreur."),
+
+    // Experience
+
+    EXPERIENCE_NOT_FOUND("EXP001", "Experience with id [%s] not found.");
 
     @Getter
     @Setter

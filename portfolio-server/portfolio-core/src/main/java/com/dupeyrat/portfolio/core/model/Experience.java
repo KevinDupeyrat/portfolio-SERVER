@@ -19,12 +19,10 @@ public class Experience {
     @Id
     private String id;
 
-    private String entitled;
     private String company;
-    private String place;
+    private String situation;
     private String startDate;
     private String endDate;
     private boolean currently;
-    private String description;
-    private List<Experience> missions;
+    private List<Project> project;
 }
