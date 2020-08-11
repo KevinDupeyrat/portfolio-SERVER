@@ -1,4 +1,4 @@
-package com.dupeyrat.portfolio.core.service.contract;
+package com.dupeyrat.portfolio.core.service.technical.contract;
 
 import com.google.gson.JsonObject;
 
