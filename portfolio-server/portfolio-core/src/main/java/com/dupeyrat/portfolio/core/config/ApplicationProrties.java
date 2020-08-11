@@ -14,6 +14,7 @@ import org.springframework.stereotype.Component;
 public class ApplicationProrties {
 
     Mail mail = new Mail();
+    Captcha captcha = new Captcha();
 
     @Data
     @NoArgsConstructor
@@ -22,5 +23,11 @@ public class ApplicationProrties {
         private String password;
         private String smtp;
         private int port;
+    }
+
+    @Data
+    @NoArgsConstructor
+    public static class Captcha {
+        private String privateKey;
     }
 }

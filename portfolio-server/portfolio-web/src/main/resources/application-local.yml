@@ -42,4 +42,6 @@ app:
     password: Test.1234
     smtp: smtp.gmail.com
     port: 587
+  captcha:
+    private-key: 6LdSob0ZAAAAABO82ZkCG63tw3k6Ilx5l5-pQOiq
 
