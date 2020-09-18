@@ -15,7 +15,7 @@ public class CustomFilter extends OncePerRequestFilter {
                                     HttpServletResponse httpServletResponse,
                                     FilterChain filterChain) throws ServletException, IOException {
         httpServletResponse.setHeader("Access-Control-Allow-Origin", "*");
-        httpServletResponse.setHeader("Access-Control-Allow-Methods", "POST, GET, OPTIONS, DELETE, PATCH");
+        httpServletResponse.setHeader("Access-Control-Allow-Methods", "POST, PUT, GET, OPTIONS, DELETE, PATCH");
         httpServletResponse.setHeader("Access-Control-Allow-Headers",
                 "authorization, content-type, xsrf-token, Cache-Control, remember-me, WWW-Authenticate");
         httpServletResponse.addHeader("Access-Control-Expose-Headers", "xsrf-token");

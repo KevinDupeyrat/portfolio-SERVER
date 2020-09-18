@@ -14,8 +14,8 @@ spring:
       host: localhost
       port: 27017
       database: portfolioDB
-      username:
-      password:
+      username: test
+      password: test
 
 # logging:
 #   file: /Users/dupeyrat/Documents/Projects/logs/portfolio/java_app_log_file.log

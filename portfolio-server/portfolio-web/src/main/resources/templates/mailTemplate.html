@@ -1,7 +1,96 @@
 <!DOCTYPE html>
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
-    <head></head>
+<html lang="fr" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <style>
+                .message {
+                    margin-left: 5rem;
+                    margin-top: 5rem;
+                    width: 15rem;
+                    background-color: #F5F5F5;
+                    padding: 1rem;
+                    color: black;
+                }
+
+                .body {
+                    border-bottom: solid 0.1rem #3ca2c5;
+                    text-align: justify;
+                    background-color: #6F6E6E;
+                    margin: auto;
+                    padding: 2rem;
+                    color: white;
+                }
+
+                .title {
+                    margin: auto;
+                    padding: 0.5rem;
+                    height: 100%;
+                    color: white;
+                    background-color: black;
+                    text-align: center;
+                }
+
+                .name {
+                    text-align: center;
+                    margin-top: 2rem;
+                    width: 100%;
+                }
+
+                .mail {
+                    margin-top: 5%;
+                }
+
+                .separator {
+                    background-color: #3ca2c5;
+                    margin: auto;
+                    height: 1rem;
+                }
+
+                .email-adress,
+                .email-adress:hover{
+                    color: white;
+                }
+
+                .parallax {
+                   /* The image used */
+                  background-image: url([[@{images/apple-computer.jpg}]]);
+                  margin: auto;
+                  /* Set a specific height */
+                  min-height: 7rem;
+                  /* Create the parallax scrolling effect */
+                  background-attachment: fixed;
+                  background-position: center;
+                  background-repeat: no-repeat;
+                  background-size: cover;
+                  border-top: #3ca2c5 solid 2rem;
+    }
+
+            </style>
+    </head>
     <body>
-        <span th:text="${message}"></span>
+
+        <div class="title">
+            <h3>PORTFOLIO</h3>
+        </div>
+
+        <div class="parallax"></div>
+
+        <div class="body">
+
+            Bonjour Kevin,
+            <div class="name">
+                Vous avez reçu un message de la part de <span th:text="${name}"></span>
+            </div>
+
+            <div class="message">
+                <span th:text="${message}"></span>
+            </div>
+
+            <div class="mail">
+                Vous pouvez lui répondre à l'adresse suivante : <span class="email-adress" th:text="${email}"></span>
+            </div>
+
+        </div>
+
     </body>
 </html>

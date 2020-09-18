@@ -18,7 +18,6 @@ public class EmailService implements IEmailService {
 
     private final JavaMailSender emailSender;
 
-    private final MailContentBuilder mailContentBuilder;
 
     @Override
     public void sendEmail(JsonObject payload) {
@@ -28,8 +27,8 @@ public class EmailService implements IEmailService {
             MimeMessageHelper messageHelper = new MimeMessageHelper(mimeMessage);
             messageHelper.setFrom(applicationProrties.getMail().getLogin());
             messageHelper.setTo(applicationProrties.getMail().getLogin());
-            messageHelper.setSubject("Test Simple Email from " + payload.get("name").getAsString());
-            String content = mailContentBuilder.build("Here his message : " + payload.get("message").getAsString());
+            messageHelper.setSubject("Nouveau message sur PORTFOLIO de la part de " + payload.get("name").getAsString());
+            String content = MailContentBuilder.SENDING.build(payload);
             messageHelper.setText(content, true);
         };
 
@@ -47,8 +46,8 @@ public class EmailService implements IEmailService {
             MimeMessageHelper messageHelper = new MimeMessageHelper(mimeMessage);
             messageHelper.setFrom(applicationProrties.getMail().getLogin());
             messageHelper.setTo(payload.get("email").toString());
-            messageHelper.setSubject("Test Simple Email from " + applicationProrties.getMail().getLogin());
-            String content = mailContentBuilder.build("Your massage has been send successfully.");
+            messageHelper.setSubject("Votre message est bien partie");
+            String content = MailContentBuilder.RESPONSE.build(payload);
             messageHelper.setText(content, true);
         };
 
